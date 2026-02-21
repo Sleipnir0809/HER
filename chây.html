@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', cursive;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    width: 80%;
+    font-size: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    background: white;
+    color: #ff4b5c;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ff4b5c;
+    color: white;
+}
+
+img {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin: 20px 0;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.heart {
+    position: fixed;
+    color: red;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    from {transform: translateY(100vh);}
+    to {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Nhạc nền -->
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+</audio>
+
+<div class="section">
+    <h1>🎂 Happy Birthday My Love 🎂</h1>
+    <p>Chúc em tuổi mới luôn xinh đẹp, hạnh phúc và luôn mỉm cười thật nhiều 💖</p>
+    <button onclick="showMessage()">Nhấn vào đây nè ❤️</button>
+</div>
+
+<div class="section" id="message" style="display:none;">
+    <h1>💌 Gửi Em 💌</h1>
+    <img src="06eb19ac-7185-4fc3-8264-48f7ac863160.jfif">
+    <p>
+        Chúc em bé tuổi mới xinh đẹp, học giỏi, chúc bé tuổi 17 thật may mắn và nhiều hạnh phúc.
+        Mong em luôn biết mình muốn gì, cần gì và tìm được hướng đi cho bản thân vào hành trình sắp tới. 
+        Sau hôm nay em chây đã không còn là con nít nữa nhưng vẫn là em bé của anh thôi, sinh nhật vui vẻ.
+        Người yêu của anh  ❤️
+    </p>
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("message").style.display = "flex";
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
